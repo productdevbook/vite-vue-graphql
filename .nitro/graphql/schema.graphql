@@ -1,0 +1,24 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+input CreateUserInput {
+  email: String!
+  name: String
+}
+
+type Mutation {
+  createUser(input: CreateUserInput!): User!
+}
+
+type Query {
+  getUser(id: ID!): User
+}
+
+type User {
+  id: ID!
+  email: String!
+  name: String
+  createdAt: String!
+}
