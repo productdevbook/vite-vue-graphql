@@ -13,6 +13,7 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "types": [
+      "vite/client",
       "nitro-graphql"
     ],
     "paths": {

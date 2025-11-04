@@ -1,1 +1,0 @@
-{"root":["./vite.config.ts","./server/api/hello.ts","./server/graphql/config.ts","./server/graphql/context.d.ts","./server/graphql/schema.ts","./server/graphql/user/createuser.resolver.ts","./server/graphql/user/getuser.resolver.ts","./server/graphql/user/userstore.ts","./src/app.vue","./src/main.ts","./src/components/helloworld.vue"],"version":"5.9.3"}
