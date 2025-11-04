@@ -16,7 +16,8 @@
     "nitro-graphql": "2.0.0-beta.15",
     "ofetch": "^1.5.1",
     "tailwindcss": "^4.1.16",
-    "vue": "^3.5.22"
+    "vue": "^3.5.22",
+    "vue-router": "^4.6.3"
   },
   "devDependencies": {
     "@types/node": "^24.10.0",
