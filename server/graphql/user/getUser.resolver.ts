@@ -1,13 +1,37 @@
-import { defineQuery } from "nitro-graphql/utils/define";
+import { defineQuery, defineType } from "nitro-graphql/utils/define";
 import { mockUsers } from "./userStore";
 
-import { HTTPError } from 'nitro/h3'
-
+/**
+ * User query resolver with union type error handling
+ * Returns explicit error types instead of null for better type safety
+ */
 export const data = defineQuery({
-  getUser: (_parent, args, ctx) => {
+  getUser: (_parent, args, _ctx) => {
+    // Demo: Simulate unauthorized access
+    if (args.id === 'forbidden') {
+      return {
+        __typename: 'UnauthorizedError',
+        message: 'You do not have permission to access this user',
+        requiredPermission: 'user:read',
+      };
+    }
 
-    // throw new HTTPError('Not implemented', { statusCode: 401 })
+    // Try to find the user
     const user = mockUsers.find(u => u.id === args.id);
-    return user || null;
+
+    // User not found - return explicit error type
+    if (!user) {
+      return {
+        __typename: 'UserNotFoundError',
+        message: `User with ID "${args.id}" does not exist`,
+        userId: args.id,
+      };
+    }
+
+    // Success case - return user with typename
+    return {
+      __typename: 'User',
+      ...user,
+    };
   },
-})
+});
