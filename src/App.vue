@@ -14,6 +14,8 @@ import HelloWorld from './components/HelloWorld.vue'
         >
           <img
             src="/vite.svg"
+            width="128"
+            height="128"
             class="h-32 hover:drop-shadow-[0_0_3rem_#646cffaa]"
             alt="Vite logo"
           />
@@ -25,6 +27,8 @@ import HelloWorld from './components/HelloWorld.vue'
         >
           <img
             src="./assets/vue.svg"
+            width="128"
+            height="128"
             class="h-32 hover:drop-shadow-[0_0_3rem_#42b883aa]"
             alt="Vue logo"
           />

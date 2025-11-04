@@ -6,7 +6,7 @@ defineProps<{ msg: string }>()
 
 const count = ref(0)
 const user = ref<any>(null)
-const loading = ref(false)
+const loading = ref(true)
 const error = ref<string | null>(null)
 
 const fetchUser = async () => {
@@ -37,7 +37,7 @@ onMounted(() => {
     <h1 class="text-5xl font-bold text-white">{{ msg }}</h1>
 
     <!-- GraphQL User Data -->
-    <div class="p-6 bg-gray-800/50 rounded-lg border border-gray-700">
+    <div class="p-6 bg-gray-800/50 rounded-lg border border-gray-700 min-h-[240px] flex flex-col">
       <h2 class="text-xl font-semibold text-white mb-4">GraphQL SDK Demo</h2>
 
       <div v-if="loading" class="text-gray-400">

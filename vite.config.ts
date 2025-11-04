@@ -6,6 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [
+    tailwindcss(),
     nitro(),
     graphql({
       framework: 'graphql-yoga',
@@ -16,7 +17,6 @@ export default defineConfig({
       },
     }),
     vue(),
-    tailwindcss(),
   ],
   nitro: {
     preset: "standard",

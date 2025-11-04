@@ -12,4 +12,17 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  /* Prevent layout shift during HMR */
+  #app {
+    min-height: 100vh;
+  }
+
+  /* Smooth transitions for HMR updates */
+  @supports (view-transition-name: root) {
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation-duration: 0.15s;
+    }
+  }
 }
