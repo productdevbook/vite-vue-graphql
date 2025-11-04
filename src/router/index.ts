@@ -17,6 +17,17 @@ const router = createRouter({
       path: '/contact',
       name: 'contact',
       component: () => import('../pages/contact.vue')
+    },
+    {
+      path: '/pinia-colada-demo',
+      name: 'pinia-colada-demo',
+      component: () => import('../pages/pinia-colada-demo.vue')
+    },
+    // Catch-all 404 route - must be last
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: () => import('../pages/404.vue')
     }
   ]
 })

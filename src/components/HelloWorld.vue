@@ -1,35 +1,13 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { $sdk } from '../graphql/default/ofetch'
+import { ref } from 'vue'
+import { useUser } from '../composables/useUser'
 
 defineProps<{ msg: string }>()
 
 const count = ref(0)
-const user = ref<any>(null)
-const loading = ref(true)
-const error = ref<string | null>(null)
 
-const fetchUser = async () => {
-  loading.value = true
-  error.value = null
-
-  try {
-    const result = await $sdk.test()
-    if (result.data) {
-      user.value = result.data.getUser
-    } else if (result.errors) {
-      error.value = result.errors[0].message
-    }
-  } catch (e) {
-    error.value = e instanceof Error ? e.message : 'Unknown error'
-  } finally {
-    loading.value = false
-  }
-}
-
-onMounted(() => {
-  fetchUser()
-})
+// Pinia Colada ile user data fetch
+const { user, isLoading: loading, error, refetch } = useUser()
 </script>
 
 <template>
@@ -45,7 +23,7 @@ onMounted(() => {
       </div>
 
       <div v-else-if="error" class="text-red-400">
-        Error: {{ error }}
+        Error: {{ error.message }}
       </div>
 
       <div v-else-if="user" class="space-y-2 text-gray-300">
@@ -55,7 +33,7 @@ onMounted(() => {
       </div>
 
       <button
-        @click="fetchUser"
+        @click="() => refetch()"
         class="mt-4 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium rounded transition-colors duration-200"
       >
         Refresh

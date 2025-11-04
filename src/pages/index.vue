@@ -65,7 +65,7 @@ import HelloWorld from '../components/HelloWorld.vue'
       <HelloWorld msg="Vite + Vue + Nitro + GraphQL" />
 
       <!-- Navigation -->
-      <div class="flex gap-4 justify-center">
+      <div class="flex gap-4 justify-center flex-wrap">
         <router-link
           to="/about"
           class="px-6 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-colors"
@@ -77,6 +77,12 @@ import HelloWorld from '../components/HelloWorld.vue'
           class="px-6 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-colors"
         >
           Contact
+        </router-link>
+        <router-link
+          to="/pinia-colada-demo"
+          class="px-6 py-2 bg-emerald-700 hover:bg-emerald-600 text-white rounded-lg transition-colors"
+        >
+          Pinia Colada Demo
         </router-link>
       </div>
     </div>

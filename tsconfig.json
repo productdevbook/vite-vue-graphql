@@ -14,7 +14,8 @@
     "allowSyntheticDefaultImports": true,
     "types": [
       "vite/client",
-      "nitro-graphql"
+      "nitro-graphql",
+      "nitro/h3"
     ],
     "paths": {
       "#graphql/server": [
