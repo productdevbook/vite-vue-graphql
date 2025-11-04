@@ -12,6 +12,7 @@ export default defineConfig({
       scaffold: false,
       paths: {
         serverGraphql: 'server/graphql',
+        clientGraphql: 'src/graphql',
       },
     }),
     vue(),

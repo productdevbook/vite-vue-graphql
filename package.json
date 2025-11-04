@@ -13,7 +13,8 @@
     "graphql": "^16.12.0",
     "graphql-yoga": "^5.16.0",
     "nitro": "npm:nitro-nightly@latest",
-    "nitro-graphql": "2.0.0-beta.13",
+    "nitro-graphql": "2.0.0-beta.15",
+    "ofetch": "^1.5.1",
     "tailwindcss": "^4.1.16",
     "vue": "^3.5.22"
   },
@@ -21,6 +22,7 @@
     "@types/node": "^24.10.0",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/tsconfig": "^0.8.1",
+    "graphql-config": "^5.1.5",
     "typescript": "^5.9.3",
     "vite": "npm:rolldown-vite@7.1.20",
     "vue-tsc": "^3.1.3"
