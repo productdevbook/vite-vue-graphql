@@ -14,7 +14,7 @@ const {
   isSuccess,
   isNotFound,
   isUnauthorized,
-  isErrorResult,
+  // isErrorResult,
   errorMessage,
   refetch,
 } = useUser(userId)

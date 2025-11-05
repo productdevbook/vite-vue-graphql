@@ -1,4 +1,4 @@
-import { defineQuery, defineType } from "nitro-graphql/utils/define";
+import { defineQuery } from "nitro-graphql/utils/define";
 import { mockUsers } from "./userStore";
 
 /**
