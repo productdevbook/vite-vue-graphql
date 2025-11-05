@@ -19,7 +19,7 @@ export default defineConfig({
     vue(),
   ],
   nitro: {
-    preset: "standard",
+    preset: process.env.NITRO_PRESET || "node-server",
     serverDir: "server"
   },
 });
