@@ -1,12 +1,14 @@
 import { defineQuery } from "nitro-graphql/utils/define";
 import { mockUsers } from "./userStore";
-
+import { GraphQLError } from "graphql/error/GraphQLError";
 /**
  * User query resolver with union type error handling
  * Returns explicit error types instead of null for better type safety
  */
 export const data = defineQuery({
   getUser: (_parent, args, _ctx) => {
+    throw new GraphQLError("User creation is disabled in mock mode.");
+
     // Demo: Simulate unauthorized access
     if (args.id === 'forbidden') {
       return {

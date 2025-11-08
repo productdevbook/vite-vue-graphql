@@ -15,6 +15,9 @@ createApp(App)
   .use(PiniaColada, {
     plugins: [
       PiniaColadaQueryHooksPlugin({
+        onSuccess: (data: unknown) => {
+          console.log('[Pinia Colada] Query success:', data)
+        },
         onError: (error: unknown) => {
           // Log error for tracking/debugging
           console.error('[Pinia Colada] Query error:', error)
