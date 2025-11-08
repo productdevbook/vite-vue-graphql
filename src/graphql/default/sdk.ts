@@ -28,11 +28,24 @@ export const TestDocument = /*#__PURE__*/ `
   }
 }
     `;
+export const CreateUserDocument = /*#__PURE__*/ `
+    mutation createUser($input: CreateUserInput!) {
+  createUser(input: $input) {
+    id
+    name
+    email
+    createdAt
+  }
+}
+    `;
 export type Requester<C = {}, E = unknown> = <R, V>(doc: string, vars?: V, options?: C) => Promise<ExecutionResult<R, E>> | AsyncIterable<ExecutionResult<R, E>>
 export function getSdk<C, E>(requester: Requester<C, E>) {
   return {
     test(variables: Types.TestQueryVariables, options?: C): Promise<ExecutionResult<Types.TestQuery, E>> {
       return requester<Types.TestQuery, Types.TestQueryVariables>(TestDocument, variables, options) as Promise<ExecutionResult<Types.TestQuery, E>>;
+    },
+    createUser(variables: Types.CreateUserMutationVariables, options?: C): Promise<ExecutionResult<Types.CreateUserMutation, E>> {
+      return requester<Types.CreateUserMutation, Types.CreateUserMutationVariables>(CreateUserDocument, variables, options) as Promise<ExecutionResult<Types.CreateUserMutation, E>>;
     }
   };
 }
