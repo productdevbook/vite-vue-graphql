@@ -43,25 +43,6 @@ function resetForm() {
 <template>
   <div class="min-h-screen bg-slate-950 p-8">
     <div class="max-w-4xl mx-auto space-y-8">
-      <!-- Header -->
-      <div>
-        <router-link
-          to="/"
-          class="text-blue-400 hover:text-blue-300 transition-colors"
-        >
-          ← Back to Home
-        </router-link>
-      </div>
-
-      <div>
-        <h1 class="text-4xl font-bold text-white mb-2">
-          Create User Mutation Demo
-        </h1>
-        <p class="text-gray-400">
-          Pinia Colada mutation example with useCreateUser
-        </p>
-      </div>
-
       <!-- Quick Fill Suggestions -->
       <div class="p-6 bg-gray-800/50 rounded-lg border border-gray-700">
         <h2 class="text-xl font-semibold text-white mb-4">
